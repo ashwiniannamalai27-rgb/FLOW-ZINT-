@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Investment Recommendations{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Add Investment -->
+        <div class="col-lg-4">
+
+            <div class="glass-card">
+
+                <h2 class="mb-4">
+                    📈 Get Investment Recommendation
+                </h2>
+
+                <form method="POST">
+
+                    <div class="mb-4">
+                        <label class="form-label">Risk Level</label>
+
+                        <select
+                            name="risk_level"
+                            class="form-select"
+                            required>
+
+                            <option value="">Select Risk Level</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+
+                        </select>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Get Recommendation
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Recommendation List -->
+        <div class="col-lg-8">
+
+            <div class="glass-card">
+
+                <h2 class="mb-4">
+                    💹 Your Investment Recommendations
+                </h2>
+
+                {% if investments %}
+
+                <table class="table table-dark table-hover">
+
+                    <thead>
+
+                        <tr>
+                            <th>Risk Level</th>
+                            <th>Recommendation</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for inv in investments %}
+
+                        <tr>
+
+                            <td>
+
+                                {% if inv.risk_level == "Low" %}
+                                    <span class="badge bg-success">
+                                        {{ inv.risk_level }}
+                                    </span>
+
+                                {% elif inv.risk_level == "Medium" %}
+                                    <span class="badge bg-warning text-dark">
+                                        {{ inv.risk_level }}
+                                    </span>
+
+                                {% elif inv.risk_level == "High" %}
+                                    <span class="badge bg-danger">
+                                        {{ inv.risk_level }}
+                                    </span>
+
+                                {% else %}
+                                    <span class="badge bg-secondary">
+                                        {{ inv.risk_level }}
+                                    </span>
+
+                                {% endif %}
+
+                            </td>
+
+                            <td>{{ inv.recommendation }}</td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+                {% else %}
+
+                <div class="text-center p-5">
+
+                    <i class="fa-solid fa-chart-line fa-4x text-success mb-3"></i>
+
+                    <h4>No Investment Recommendations Yet</h4>
+
+                    <p class="text-muted">
+                        Select your risk level to receive an investment recommendation.
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block title %}Expense Tracker{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Add Expense -->
+
+        <div class="col-lg-4">
+
+            <div class="glass-card">
+
+                <h2 class="mb-4">
+                    💸 Add Expense
+                </h2>
+
+                <form method="POST">
+
+                    <div class="mb-3">
+
+                        <label>Category</label>
+
+                        <input
+                            type="text"
+                            name="category"
+                            class="form-control"
+                            placeholder="Food, Shopping..."
+                            required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Amount</label>
+
+                        <input
+                            type="number"
+                            name="amount"
+                            class="form-control"
+                            placeholder="Enter amount"
+                            required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label>Date</label>
+
+                        <input
+                            type="date"
+                            name="date"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+                    <button class="btn btn-danger w-100">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Expense
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Expense List -->
+
+        <div class="col-lg-8">
+
+            <div class="glass-card">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <h2>📋 Expense History</h2>
+
+                    <input
+                        type="text"
+                        class="form-control w-50"
+                        placeholder="Search...">
+
+                </div>
+
+                {% if expenses %}
+
+                <table class="table table-dark table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Category</th>
+
+                            <th>Amount</th>
+
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for e in expenses %}
+
+                        <tr>
+
+                            <td>
+                                <span class="badge bg-primary">
+                                    {{ e.category }}
+                                </span>
+                            </td>
+
+                            <td>
+                                ₹{{ e.amount }}
+                            </td>
+
+                            <td>
+    {{ e.expense_date }}
+</td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+                {% else %}
+
+                <div class="text-center p-5">
+
+                    <i class="fa-solid fa-receipt fa-4x text-danger mb-3"></i>
+
+                    <h4>No Expenses Added</h4>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

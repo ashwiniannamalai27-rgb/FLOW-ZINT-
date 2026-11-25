@@ -1,0 +1,605 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    min-height:100vh;
+    color:#fff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:10px;
+}
+
+/* Navbar */
+
+.navbar{
+    background:rgba(15,23,42,.9);
+    backdrop-filter:blur(12px);
+    padding:15px 40px;
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:20px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#38bdf8 !important;
+}
+
+/* Glass Card */
+
+.glass-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+    transition:.35s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5{
+
+    font-weight:600;
+
+}
+
+/* Buttons */
+
+.btn-primary{
+
+background:#2563eb;
+
+border:none;
+
+border-radius:12px;
+
+padding:12px 25px;
+
+}
+
+.btn-primary:hover{
+
+background:#1d4ed8;
+
+}
+
+/* Tables */
+
+table{
+
+color:white !important;
+
+}
+
+/* Forms */
+
+.form-control{
+
+background:#1e293b;
+
+border:none;
+
+color:white;
+
+border-radius:12px;
+
+padding:12px;
+
+}
+
+.form-control:focus{
+
+background:#1e293b;
+
+color:white;
+
+box-shadow:none;
+
+border:1px solid #3b82f6;
+
+}
+
+/* Links */
+
+a{
+
+text-decoration:none;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:50px;
+
+text-align:center;
+
+padding:20px;
+
+color:#94a3b8;
+
+}
+/* ===========================
+   SIDEBAR
+=========================== */
+
+body{
+    background:#0f172a;
+    font-family:'Poppins',sans-serif;
+}
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    background:linear-gradient(180deg,#0f172a,#1e293b);
+    padding:30px 20px;
+    box-shadow:4px 0 20px rgba(0,0,0,.35);
+}
+
+.logo{
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+    font-weight:700;
+}
+
+.sidebar a{
+    display:block;
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:15px 18px;
+    margin-bottom:12px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:16px;
+}
+
+.sidebar a i{
+    width:30px;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+    color:white;
+    transform:translateX(8px);
+}
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:25px;
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:18px;
+    padding:25px;
+    color:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.glass-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 35px rgba(37,99,235,.35);
+}
+
+/* Dashboard Numbers */
+
+.glass-card h3{
+    font-size:30px;
+    font-weight:700;
+}
+
+.glass-card h6{
+    color:#cbd5e1;
+}
+
+/* Alerts */
+
+.alert{
+    border:none;
+    border-radius:12px;
+}
+
+/* Chart */
+
+canvas{
+    max-height:350px;
+}
+/* ==========================
+   Analytics Section
+========================== */
+
+.analytics-card{
+
+    height:100%;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.summary-item strong{
+
+    color:#38bdf8;
+
+}
+
+.badge{
+
+    font-size:14px;
+
+}
+
+canvas{
+
+    width:100% !important;
+
+    height:350px !important;
+
+}
+/* ===========================
+   Feature Cards
+=========================== */
+
+.feature-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px;
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateX(8px);
+    background:#2563eb;
+}
+
+.feature-card i{
+    font-size:24px;
+    color:#38bdf8;
+}
+
+.feature-card span,
+.feature-card strong{
+    color:white;
+}
+
+/* Mini Cards */
+
+.mini-card{
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+    color:white;
+    transition:.3s;
+}
+
+.mini-card:hover{
+    transform:scale(1.03);
+}
+
+.blue{
+    background:#2563eb;
+}
+
+.red{
+    background:#dc2626;
+}
+
+.green{
+    background:#059669;
+}
+/* ======================
+LOGIN PAGE
+====================== */
+
+.login-page{
+
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+}
+
+.login-left{
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.glass-login{
+
+    width:420px;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.1);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.glass-login input{
+
+    background:rgba(255,255,255,.15);
+
+    border:none;
+
+    color:white;
+
+}
+
+.glass-login input:focus{
+
+    background:rgba(255,255,255,.25);
+
+    color:white;
+
+}
+
+.glass-login input::placeholder{
+
+    color:#ddd;
+
+}
+/* ======================
+PROFILE FORM
+====================== */
+
+.form-control{
+
+    background:rgba(255,255,255,.12);
+
+    border:none;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:12px;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.2);
+
+    color:white;
+
+    box-shadow:none;
+
+}
+
+.form-control::placeholder{
+
+    color:#ddd;
+
+}
+
+label{
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+/* =====================
+TABLE
+===================== */
+
+.table{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.table thead{
+
+    background:#2563eb;
+
+}
+
+.table tbody tr{
+
+    transition:.3s;
+
+}
+
+.table tbody tr:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.table td,
+.table th{
+
+    vertical-align:middle;
+
+}
+/* Expense Page */
+
+.badge{
+    padding:8px 14px;
+    font-size:14px;
+    border-radius:20px;
+}
+
+.table-dark{
+    background:transparent;
+}
+
+.table-dark td,
+.table-dark th{
+    background:transparent;
+}
+/* Savings Page */
+
+.btn-success{
+
+    background:linear-gradient(135deg,#10b981,#22c55e);
+
+    border:none;
+
+}
+
+.btn-success:hover{
+
+    background:linear-gradient(135deg,#059669,#16a34a);
+
+}
+/* =======================
+Investment Page
+======================= */
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+
+}
+/* ======================
+Goal Page
+====================== */
+
+.goal-card{
+
+    background:rgba(255,255,255,.08);
+
+    padding:20px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.progress{
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.progress-bar{
+
+    border-radius:20px;
+
+}
+/* =======================
+Reminder Page
+======================= */
+
+.btn-warning{
+
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+
+    border:none;
+
+    color:white;
+
+}
+
+.btn-warning:hover{
+
+    background:linear-gradient(135deg,#d97706,#f59e0b);
+
+}
+
+.badge{
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+}

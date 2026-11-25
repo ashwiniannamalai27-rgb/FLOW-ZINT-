@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}
+Financial Summary
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        Financial Summary
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card p-3 text-center">
+
+                <h5>Total Budget</h5>
+
+                <h3>₹ {{ total_budget }}</h3>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card p-3 text-center">
+
+                <h5>Total Expenses</h5>
+
+                <h3>₹ {{ total_expenses }}</h3>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card p-3 text-center">
+
+                <h5>Remaining</h5>
+
+                <h3>₹ {{ remaining }}</h3>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card p-3 text-center">
+
+                <h5>Status</h5>
+
+                <h3>{{ status }}</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <canvas id="pieChart"></canvas>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <canvas id="barChart"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const financeData = {{ report | tojson }};
+
+    // Pie Chart
+    new Chart(
+        document.getElementById("pieChart"),
+        {
+            type: "pie",
+
+            data: {
+
+                labels: [
+                    "Budget",
+                    "Expense",
+                    "Savings"
+                ],
+
+                datasets: [
+
+                    {
+
+                        data: [
+
+                            financeData.budget,
+                            financeData.expense,
+                            financeData.savings
+
+                        ],
+
+                        backgroundColor: [
+
+                            "#4CAF50",
+                            "#F44336",
+                            "#2196F3"
+
+                        ]
+
+                    }
+
+                ]
+
+            }
+
+        }
+    );
+
+
+
+    // Bar Chart
+    new Chart(
+        document.getElementById("barChart"),
+        {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+
+                    "Budget",
+                    "Expense",
+                    "Savings"
+
+                ],
+
+                datasets: [
+
+                    {
+
+                        label: "Amount",
+
+                        data: [
+
+                            financeData.budget,
+                            financeData.expense,
+                            financeData.savings
+
+                        ],
+
+                        backgroundColor: [
+
+                            "#4CAF50",
+                            "#F44336",
+                            "#2196F3"
+
+                        ]
+
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    );
+
+});
+
+</script>
+
+{% endblock %}

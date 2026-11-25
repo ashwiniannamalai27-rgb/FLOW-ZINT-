@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="container-fluid login-page">
+
+    <div class="row vh-100">
+
+        <!-- Left Side -->
+
+        <div class="col-lg-6 login-left d-flex justify-content-center align-items-center">
+
+            <div>
+
+                <h1 class="display-4 fw-bold">
+                    AI Financial Wellness
+                </h1>
+
+                <p class="lead">
+                    Smart Budgeting • AI Insights • Secure Finance
+                </p>
+
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                     width="320">
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+
+            <div class="glass-login">
+
+                <h2 class="mb-4 text-center">
+
+                    Welcome Back 👋
+
+                </h2>
+
+                <form method="POST">
+
+                    <div class="mb-3">
+
+                        <label>Email</label>
+
+                        <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        required>
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label>Password</label>
+
+                        <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        required>
+
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+                <hr>
+
+                <p class="text-center">
+
+                    New User?
+
+                    <a href="/register">
+
+                        Register Here
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
